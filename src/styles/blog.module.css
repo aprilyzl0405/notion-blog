@@ -36,6 +36,7 @@
   border-radius: 5px;
   transition: all 0.2s ease 0s;
 }
+
 .escapePreview:hover {
   background-color: white;
   color: black;
@@ -47,7 +48,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
+
 .draftBadge {
   border-radius: 16px;
   background-color: black;
@@ -119,8 +122,16 @@
   text-decoration: underline;
 }
 
+.postPreview :global(.authors) {
+  margin-bottom: 0.5em;
+  color: gray;
+  display: block;
+}
+
 .postPreview :global(.posted) {
   margin-bottom: 0.5em;
+  color: gray;
+  display: block;
 }
 
 .post {
