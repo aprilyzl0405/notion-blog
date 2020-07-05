@@ -122,13 +122,15 @@
   text-decoration: underline;
 }
 
-.postPreview :global(.authors) {
+.postPreview,
+.post :global(.authors) {
   margin-bottom: 0.5em;
   color: gray;
   display: block;
 }
 
-.postPreview :global(.posted) {
+.postPreview,
+.post :global(.posted) {
   margin-bottom: 0.5em;
   color: gray;
   display: block;
