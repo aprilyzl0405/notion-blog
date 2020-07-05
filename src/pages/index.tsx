@@ -11,8 +11,9 @@ export default () => (
     <div className={sharedStyles.layout}>
       <img src="/street.png" height="250" width="700" alt="Home" />
       <h1>April5's Fairyland</h1>
+      <h2>踌躇满志磨洋工, 混吃等死一条鱼</h2>
 
-      <Features />
+      {/* <Features /> */}
 
       {/* <div className="explanation">
         <p>

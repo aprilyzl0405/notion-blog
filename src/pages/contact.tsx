@@ -7,8 +7,14 @@ import contactStyles from '../styles/contact.module.css'
 import GitHub from '../components/svgs/github'
 import Twitter from '../components/svgs/twitter'
 import Envelope from '../components/svgs/envelope'
+import Weibo from '../components/svgs/weibo'
 
 const contacts = [
+  {
+    Comp: Weibo,
+    alt: 'Weibo icon',
+    link: 'https://weibo.com/2306221832/profile',
+  },
   {
     Comp: Twitter,
     alt: 'twitter icon',
@@ -36,12 +42,7 @@ export default () => (
 
       <h1 style={{ marginTop: 0 }}>Contact</h1>
 
-      <div className={contactStyles.name}>
-        April5 - Fishing Engineer -{' '}
-        <ExtLink href="https://www.notion.so/Resume-1483e5daeaad4f0999468f9aafc8f085">
-          My Resume
-        </ExtLink>
-      </div>
+      <div className={contactStyles.name}>April5 - Fishing Engineer</div>
 
       <div className={contactStyles.links}>
         {contacts.map(({ Comp, link, alt }) => {
