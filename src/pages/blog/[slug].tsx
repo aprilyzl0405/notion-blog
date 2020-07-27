@@ -265,7 +265,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                     height: '100%',
                     border: 'none',
                     position: 'absolute',
-                    top: 0,
+                    top: '-2rem',
                   }
                 : {
                     // width,
