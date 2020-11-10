@@ -60,6 +60,7 @@ const MineSweeper = () => {
   const [ctx, setCtx] = useState(null)
   const [opening, setOpening] = useState(false)
   const [status, setStatus] = useState<GameStatus>(GameStatus.Playing)
+  const [msg, setMsg] = useState('Playing...')
 
   const [imgBg, setImgBg] = useState(null)
   const [imgFlag, setImgFlag] = useState(null)
@@ -101,7 +102,7 @@ const MineSweeper = () => {
       setArr([...arr])
       setStatus(GameStatus.Lost)
 
-      setTimeout(_ => alert('You lose!'), 10)
+      setTimeout(_ => setMsg('😈😈 You lose 😈😈'), 10)
       return
     }
 
@@ -143,7 +144,7 @@ const MineSweeper = () => {
 
     if (isStop) {
       setStatus(GameStatus.Win)
-      setTimeout(_ => alert('You win!'), 10)
+      setTimeout(_ => setMsg('🤩🤩 You Win 🤩🤩'), 10)
     }
   }
 
@@ -354,6 +355,12 @@ const MineSweeper = () => {
 
   return (
     <>
+      <div
+        className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+        role="alert"
+      >
+        <p className="text-center font-bold">{msg}</p>
+      </div>
       <canvas id="ms-canvas" data-title="mine sweeper"></canvas>
     </>
   )
