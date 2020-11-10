@@ -12,6 +12,7 @@ process.env['NODE' + '_ENV'] = 'production'
 process.env.USE_CACHE = 'true'
 
 // constants
+const host = 'https://april-zhh.cn'
 const NOW = new Date().toJSON()
 
 function mapToAuthor(author) {
@@ -61,10 +62,10 @@ function createRSS(blogPosts = []) {
 
   return `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>My Blog</title>
-    <subtitle>Blog</subtitle>
-    <link href="/atom" rel="self" type="application/rss+xml"/>
-    <link href="/" />
+    <title>April5's Fairyland</title>
+    <subtitle>踌躇满志磨洋工, 混吃等死一条鱼</subtitle>
+    <link href="${host}/atom" rel="self" type="application/rss+xml"/>
+    <link href="${host}/" />
     <updated>${NOW}</updated>
     <id>My Notion Blog</id>${postsString}
   </feed>`
@@ -92,7 +93,7 @@ async function main() {
 
   blogPosts.forEach(post => {
     post.authors = post.authors.map(id => users[id])
-    post.link = getBlogLink(post.Slug)
+    post.link = host + getBlogLink(post.Slug)
     post.title = post.Page
     post.date = post.Date
   })
