@@ -20,7 +20,7 @@ type Row<T> = Array<T>
 type Col<T> = Array<T>
 type MineArea = Row<Col<Node>>
 
-const scale = 2
+const scale = 1
 const row = 20
 const col = 20
 const side = 512 / col
@@ -233,7 +233,7 @@ const MineSweeper = () => {
 
       // set canvas size
       canvas.width = contentWidth * scale
-      canvas.style.width = contentWidth + 'px'
+      canvas.style.width = '100%'
       canvas.height = contentHeight * scale
 
       // init event
