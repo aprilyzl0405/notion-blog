@@ -32,7 +32,7 @@ const contacts = [
   },
 ]
 
-export default () => (
+const Contact = () => (
   <>
     <Header titlePre="Contact" />
     <div className={sharedStyles.layout}>
@@ -56,3 +56,5 @@ export default () => (
     </div>
   </>
 )
+
+export default Contact

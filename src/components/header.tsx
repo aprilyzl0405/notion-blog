@@ -8,13 +8,14 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Home', page: '/' },
   { label: 'Blog', page: '/blog' },
   { label: 'Contact', page: '/contact' },
+  { label: 'Algorithm', page: '/algo' },
   { label: 'About', page: '/blog/resume' },
   // { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
 
 const ogImageUrl = 'https://april-zhh.cn/og-image.png'
 
-export default ({ titlePre = '' }) => {
+const Header = ({ titlePre = '' }) => {
   const { pathname } = useRouter()
 
   return (
@@ -48,3 +49,5 @@ export default ({ titlePre = '' }) => {
     </header>
   )
 }
+
+export default Header
