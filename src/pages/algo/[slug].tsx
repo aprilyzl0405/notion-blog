@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Header from '../../components/header'
 import { algos, getAlgoLink } from '../../lib/algo-helpers'
 import algoStyles from '../../styles/algo.module.css'
-import { MineSweeper } from '../../components/algos'
 
 export async function getStaticProps({ params: { slug }, preview }) {
   return {

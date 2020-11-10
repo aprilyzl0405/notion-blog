@@ -15,8 +15,12 @@ const Algo = () => {
             <div className="md:flex m-2" key={slug}>
               <div className="md:flex-shrink-0">
                 <img
-                  className="rounded-lg md:w-56"
-                  src={algos[slug]['img']}
+                  className="md:h-32 rounded-lg md:w-56 object-cover"
+                  src={
+                    process.env.NODE_ENV === 'production'
+                      ? algos[slug]['img']
+                      : '/minesweeper.jpg'
+                  }
                   alt={algos[slug]['alt']}
                 />
               </div>
