@@ -1,10 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+import { trackingCode } from '../lib/gtag'
+
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>{trackingCode}</Head>
         <body>
           <Main />
           <NextScript />
