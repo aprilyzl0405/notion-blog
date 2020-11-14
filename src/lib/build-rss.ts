@@ -64,7 +64,7 @@ function createRSS(blogPosts = []) {
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>April5's Fairyland</title>
     <subtitle>踌躇满志磨洋工, 混吃等死一条鱼</subtitle>
-    <link href="${host}/atom" rel="self" type="application/rss+xml"/>
+    <link href="${host}/atom.xml" rel="self" type="application/rss+xml"/>
     <link href="${host}/" />
     <updated>${NOW}</updated>
     <id>My Notion Blog</id>${postsString}
@@ -98,7 +98,7 @@ async function main() {
     post.date = post.Date
   })
 
-  const outputPath = './public/atom'
+  const outputPath = './public/atom.xml'
   await writeFile(resolve(outputPath), createRSS(blogPosts))
   console.log(`Atom feed file generated at \`${outputPath}\``)
 }

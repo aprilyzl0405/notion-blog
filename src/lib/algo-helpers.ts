@@ -9,6 +9,13 @@ export const algos = {
     alt: 'minesweeper',
     comp: algoComponents.MineSweeper,
   },
+  Maze: {
+    name: '迷宫（Maze）',
+    desc: `指的是充满复杂通道，很难找到从其内部到达入口或从入口到达中心的道路。`,
+    img: 'https://static.april-zhh.cn/algo/maze.png',
+    alt: 'maze',
+    comp: algoComponents.Maze,
+  },
 }
 
 export const getAlgoLink = (slug: string) => {

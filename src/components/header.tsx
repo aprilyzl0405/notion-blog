@@ -7,9 +7,9 @@ import styles from '../styles/header.module.css'
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Home', page: '/' },
   { label: 'Blog', page: '/blog' },
-  { label: 'Contact', page: '/contact' },
   { label: 'Algorithm', page: '/algo' },
-  { label: 'About', page: '/blog/resume' },
+  { label: 'Contact', page: '/contact' },
+  // { label: 'About', page: '/blog/resume' },
   // { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
 

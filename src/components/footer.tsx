@@ -18,7 +18,9 @@ const Footer = () => (
           view source
         </ExtLink>
       </span> */}
-      <ExtLink href="http://beian.miit.gov.cn/">粤ICP备18064138号</ExtLink>
+      <ExtLink href="http://beian.miit.gov.cn/">
+        <span className="text-xs">粤ICP备18064138号</span>
+      </ExtLink>
     </footer>
   </>
 )

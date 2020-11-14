@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { contentWidth, contentHeight } from './helper'
 
 interface Node {
   n: number
@@ -23,12 +24,9 @@ type MineArea = Row<Col<Node>>
 const scale = 1
 const row = 20
 const col = 20
-const side = 512 / col
+const side = contentWidth / col
 const total = row * col
 const MineRate = 0.1
-
-const contentWidth = col * side
-const contentHeight = row * side
 
 const colors = Array(8)
   .fill(0)
@@ -233,7 +231,6 @@ const MineSweeper = () => {
 
       // set canvas size
       canvas.width = contentWidth * scale
-      canvas.style.width = '100%'
       canvas.height = contentHeight * scale
 
       // init event
@@ -361,7 +358,11 @@ const MineSweeper = () => {
       >
         <p className="text-center font-bold">{msg}</p>
       </div>
-      <canvas id="ms-canvas" data-title="mine sweeper"></canvas>
+      <canvas
+        id="ms-canvas"
+        data-title="mine sweeper"
+        className="w-full"
+      ></canvas>
     </>
   )
 }

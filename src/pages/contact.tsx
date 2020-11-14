@@ -4,6 +4,8 @@ import ExtLink from '../components/ext-link'
 import sharedStyles from '../styles/shared.module.css'
 import contactStyles from '../styles/contact.module.css'
 
+import Link from 'next/link'
+
 import GitHub from '../components/svgs/github'
 import Twitter from '../components/svgs/twitter'
 import Envelope from '../components/svgs/envelope'
@@ -36,8 +38,10 @@ const Contact = () => (
   <>
     <Header titlePre="Contact" />
     <div className={sharedStyles.layout}>
-      <div className={contactStyles.avatar}>
-        <img src="/avatar.png" alt="avatar with letters JJ" height={60} />
+      <div className={`${contactStyles.avatar} cursor-pointer`}>
+        <Link href="/blog/resume">
+          <img src="/avatar.png" alt="avatar with letters JJ" height={60} />
+        </Link>
       </div>
 
       <h1 style={{ marginTop: 0 }}>Contact</h1>
