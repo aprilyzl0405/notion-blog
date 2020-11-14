@@ -11,7 +11,7 @@ export const algos = {
   },
   Maze: {
     name: '迷宫（Maze）',
-    desc: `指的是充满复杂通道，很难找到从其内部到达入口或从入口到达中心的道路。`,
+    desc: `一种充满复杂通道，很难找到从其内部到达入口或从入口到达中心的道路。涉及 dfs 和 bfs 算法。`,
     img: 'https://static.april-zhh.cn/algo/maze.png',
     alt: 'maze',
     comp: algoComponents.Maze,
