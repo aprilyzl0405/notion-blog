@@ -28,7 +28,7 @@ const RenderAlgo = ({ slug, preview }) => {
   return (
     <>
       <Header titlePre={slug} />
-      <div className={`${algoStyles.algo} border`}>
+      <div className="algo border">
         {AlgoComponent ? <AlgoComponent /> : <h1>Undefined Component</h1>}
       </div>
     </>

@@ -23,6 +23,13 @@ export const algos = {
     alt: 'fractal',
     comp: algoComponents.Fractal,
   },
+  Trie: {
+    name: '单词查找树（Trie）',
+    desc: `Trie树，是一种树形结构，是一种哈希树的变种。优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，查询效率比哈希树高。`,
+    img: 'https://static.april-zhh.cn/algo/trie.png',
+    alt: 'trie',
+    comp: algoComponents.Trie,
+  },
 }
 
 export const getAlgoLink = (slug: string) => {

@@ -1,7 +1,5 @@
 import React from 'react'
 import Header from '../../components/header'
-import sharedStyles from '../../styles/shared.module.css'
-import algoStyles from '../../styles/algo.module.css'
 import Link from 'next/link'
 import { algos, getAlgoLink } from '../../lib/algo-helpers'
 
@@ -9,8 +7,8 @@ const Algo = () => {
   return (
     <>
       <Header titlePre="Algorithm" />
-      <div className={sharedStyles.layout}>
-        <div className={algoStyles.algoPreview}>
+      <div className="layout">
+        <div className="algoPreview">
           {Object.keys(algos).map(slug => (
             <div className="md:flex m-2" key={slug}>
               <div className="md:flex-shrink-0">

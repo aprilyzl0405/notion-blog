@@ -1,10 +1,9 @@
 import Header from '../components/header'
-import sharedStyles from '../styles/shared.module.css'
 
 const Blog = () => (
   <>
     <Header titlePre="Home" />
-    <div className={sharedStyles.layout}>
+    <div className="layout">
       <img
         src={
           process.env.NODE_ENV === 'production'

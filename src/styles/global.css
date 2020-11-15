@@ -273,7 +273,7 @@ mark {
   text-align: center;
 }
 
-.logo :global(svg) {
+.logo svg {
   max-width: calc(100vw - var(--gap-double));
 }
 
@@ -299,7 +299,7 @@ h2 {
   text-align: center;
   cursor: pointer;
 }
-.video :global(video) {
+.video video {
   max-width: 100%;
   max-height: 90vh;
   outline: none;
@@ -314,7 +314,7 @@ p {
 pre {
   white-space: pre;
 }
-pre :global(code) {
+pre code {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }

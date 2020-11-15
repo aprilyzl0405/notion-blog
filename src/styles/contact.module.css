@@ -20,7 +20,8 @@
 .avatar {
   display: block;
   text-align: center;
-  margin: 1rem 0;
+  margin: auto;
+  max-width: 8rem;
 }
 
 .avatar img {

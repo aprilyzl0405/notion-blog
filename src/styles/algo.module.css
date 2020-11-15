@@ -7,3 +7,7 @@
   max-width: 512px;
   margin: 0 auto;
 }
+
+.algo-img-height {
+  @apply h-32 !important;
+}

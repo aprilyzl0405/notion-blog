@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import Header from '../../components/header'
 
-import blogStyles from '../../styles/blog.module.css'
-import sharedStyles from '../../styles/shared.module.css'
-
 import {
   getBlogLink,
   getDateStr,
@@ -52,28 +49,28 @@ const Blog = ({ posts = [], preview }) => {
     <>
       <Header titlePre="Blog" />
       {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
+        <div className="previewAlertContainer">
+          <div className="previewAlert">
             <b>Note:</b>
             {` `}Viewing in preview mode{' '}
             <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
+              <button className="escapePreview">Exit Preview</button>
             </Link>
           </div>
         </div>
       )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
+      <div className="layout blogIndex">
         {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
+          <p className="noPosts">There are no posts yet</p>
         )}
         {posts.map(post => {
           return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
+            <div className="postPreview" key={post.Slug}>
               <h3 className="title">
                 <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                  <div className={blogStyles.titleContainer}>
+                  <div className="titleContainer">
                     {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Draft</span>
+                      <span className="draftBadge">Draft</span>
                     )}
                     <a>{post.Page}</a>
                   </div>

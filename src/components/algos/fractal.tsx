@@ -337,13 +337,11 @@ const Fractal = () => {
   }
 
   useEffect(() => {
-    ;(async () => {
-      const canvas = document.getElementById('mz-canvas') as HTMLCanvasElement
-      const ctx = canvas.getContext('2d')
+    const canvas = document.getElementById('fr-canvas') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d')
 
-      setCanvas(canvas)
-      setCtx(ctx)
-    })()
+    setCanvas(canvas)
+    setCtx(ctx)
   }, [])
 
   return (
@@ -373,7 +371,7 @@ const Fractal = () => {
           ))}
         </div>
       </div>
-      <canvas id="mz-canvas" data-title="maze" className="w-full"></canvas>
+      <canvas id="fr-canvas" data-title="fractal" className="w-full"></canvas>
     </>
   )
 }

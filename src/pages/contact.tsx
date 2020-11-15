@@ -1,9 +1,6 @@
 import Header from '../components/header'
 import ExtLink from '../components/ext-link'
 
-import sharedStyles from '../styles/shared.module.css'
-import contactStyles from '../styles/contact.module.css'
-
 import Link from 'next/link'
 
 import GitHub from '../components/svgs/github'
@@ -37,8 +34,8 @@ const contacts = [
 const Contact = () => (
   <>
     <Header titlePre="Contact" />
-    <div className={sharedStyles.layout}>
-      <div className={`${contactStyles.avatar} cursor-pointer`}>
+    <div className="layout">
+      <div className={`avatar cursor-pointer`}>
         <Link href="/blog/resume">
           <img src="/avatar.png" alt="avatar with letters JJ" height={60} />
         </Link>
@@ -46,9 +43,9 @@ const Contact = () => (
 
       <h1 style={{ marginTop: 0 }}>Contact</h1>
 
-      <div className={contactStyles.name}>Solirpa - Fishing Engineer</div>
+      <div className="name">Solirpa - Fishing Engineer</div>
 
-      <div className={contactStyles.links}>
+      <div className="links">
         {contacts.map(({ Comp, link, alt }) => {
           return (
             <ExtLink key={link} href={link} aria-label={alt}>

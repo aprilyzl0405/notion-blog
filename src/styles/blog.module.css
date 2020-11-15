@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: none;
+  /* border: none; */
   background-color: black;
   border: 1px solid black;
   color: white;
@@ -71,12 +71,19 @@
   /* border-bottom: 0.5px solid rgba(0, 0, 0, 0.8); */
 }
 
-.postPreview :global(.title) {
+.postPreview .title {
   margin-bottom: 0.5em;
   text-align: center;
 }
 
-.postPreview :global(.posted) {
+.postPreview .authors,
+.postPreview .posted {
+  margin-bottom: 0.5em;
+  color: gray;
+  display: block;
+}
+
+.postPreview .posted {
   margin-bottom: 0.5em;
   color: gray;
   display: block;
@@ -116,37 +123,37 @@
   text-align: center;
 }
 
-.post :global(h2) {
+.post h2 {
   font-size: 2rem;
   font-weight: 400;
 }
 
-.post :global(h3) {
+.post h3 {
   font-size: 1.5em;
   font-weight: 400;
 }
 
-.post :global(h2),
-.post :global(h3),
-.post :global(h4) {
+.post h2,
+.post h3,
+.post h4 {
   margin: 1rem 0 1.5rem 0;
 }
 
-.post :global(video),
-.post :global(img),
-.post :global(.asset-wrapper) {
+.post video,
+.post img,
+.post .asset-wrapper {
   margin: 2rem auto;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
   max-width: 100%;
   display: block;
 }
 
-.post :global(.tweet) {
+.post .tweet {
   margin: 2rem auto;
   text-align: center;
 }
 
-.post :global(.callout) {
+.post .callout {
   padding: 16px 16px 16px 12px;
   display: flex;
   width: 100%;
@@ -157,28 +164,21 @@
   background: rgba(235, 236, 237, 0.6);
 }
 
-.post :global(.callout .text) {
+.post .callout .text {
   margin-left: 8px;
 }
 
-.post :global(.underline) {
+.post .underline {
   text-decoration: underline;
 }
 
-.post :global(.authors),
-.post :global(.posted) {
+.post .authors,
+.post .posted {
   margin-bottom: 0.5em;
   color: gray;
   display: block;
   font-weight: 200;
   text-align: center;
-}
-
-.postPreview :global(.authors),
-.postPreview :global(.posted) {
-  margin-bottom: 0.5em;
-  color: gray;
-  display: block;
 }
 
 .post {
@@ -187,24 +187,24 @@
   padding: 0 5%;
 }
 
-.post :global(hr) {
+.post hr {
   margin-bottom: 2em;
 }
 
-.post :global(ol),
-.post :global(ul),
-.post :global(p) {
+.post ol,
+.post ul,
+.post p {
   color: #555;
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 1.7;
 }
 
-.post :global(a + p) {
+.post a + p {
   margin-top: 0;
 }
 
-.post :global(.sign) {
+.post .sign {
   box-shadow: 0 0 black;
   height: 3rem;
   margin: 5rem auto 0 auto;

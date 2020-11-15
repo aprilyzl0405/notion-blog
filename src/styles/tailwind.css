@@ -4,15 +4,8 @@
 @tailwind utilities;
 /* purgecss end ignore */
 
-.btn-blue {
-  @apply bg-blue-500;
-  @apply text-white;
-  @apply font-bold;
-  @apply py-2;
-  @apply px-4;
-  @apply rounded;
-}
-
-.algo-img-height {
-  @apply h-32 !important;
-}
+@import './algo.module.css';
+@import './contact.module.css';
+@import './blog.module.css';
+@import './shared.module.css';
+@import './header.module.css';
