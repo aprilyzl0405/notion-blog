@@ -68,7 +68,30 @@
 .postPreview {
   max-width: 600px;
   margin: 10px auto 2rem auto;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.8);
+  /* border-bottom: 0.5px solid rgba(0, 0, 0, 0.8); */
+}
+
+.postPreview :global(.title) {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.postPreview :global(.posted) {
+  margin-bottom: 0.5em;
+  color: gray;
+  display: block;
+  font-weight: 200;
+  text-align: center;
+}
+
+.postPreview:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: hsla(0, 0%, 78.4%, 0.5);
+  margin: 1.5rem auto 0;
+  border-radius: 10px;
 }
 
 .postPreview:last-child {
@@ -90,6 +113,7 @@
 .post h1 {
   font-weight: 500;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .post :global(h2) {
@@ -147,6 +171,7 @@
   color: gray;
   display: block;
   font-weight: 200;
+  text-align: center;
 }
 
 .postPreview :global(.authors),
