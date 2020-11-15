@@ -62,7 +62,7 @@ function createRSS(blogPosts = []) {
 
   return `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>April5's Fairyland</title>
+    <title>Solirpa's Fairyland</title>
     <subtitle>踌躇满志磨洋工, 混吃等死一条鱼</subtitle>
     <link href="${host}/atom.xml" rel="self" type="application/rss+xml"/>
     <link href="${host}/" />

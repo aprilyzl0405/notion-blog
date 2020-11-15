@@ -25,7 +25,7 @@ const contacts = [
   {
     Comp: GitHub,
     alt: 'github icon',
-    link: 'https://github.com/aprilyzl0405?tab=repositories',
+    link: 'https://github.com/solirpa?tab=repositories',
   },
   {
     Comp: Envelope,
@@ -46,7 +46,7 @@ const Contact = () => (
 
       <h1 style={{ marginTop: 0 }}>Contact</h1>
 
-      <div className={contactStyles.name}>April5 - Fishing Engineer</div>
+      <div className={contactStyles.name}>Solirpa - Fishing Engineer</div>
 
       <div className={contactStyles.links}>
         {contacts.map(({ Comp, link, alt }) => {

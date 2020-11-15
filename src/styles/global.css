@@ -252,7 +252,7 @@ figure {
 }
 
 a {
-  color: #0070f3;
+  color: #276dbf;
   text-decoration: none;
 }
 a:hover {
@@ -288,7 +288,7 @@ h2 {
   font-weight: 300;
   font-size: 1.25rem;
   letter-spacing: -0.02rem;
-  color: var(--accents-3);
+  /* color: var(--accents-3); */
 }
 
 .video {

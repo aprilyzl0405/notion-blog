@@ -79,9 +79,9 @@ const Blog = ({ posts = [], preview }) => {
                   </div>
                 </Link>
               </h3>
-              {post.Authors.length > 0 && (
+              {/* {post.Authors.length > 0 && (
                 <small className="authors">By: {post.Authors.join(' ')}</small>
-              )}
+              )} */}
               {post.Date && (
                 <small className="posted">
                   Posted: {getDateStr(post.Date)}
