@@ -16,6 +16,13 @@ export const algos = {
     alt: 'maze',
     comp: algoComponents.Maze,
   },
+  Fractal: {
+    name: '分形图（Fractal）',
+    desc: `数学家研究分形，是力图以数学方法，模拟自然界存在的、及科学研究中出现的那些看似无规律的各种现象。`,
+    img: 'https://static.april-zhh.cn/algo/fib.png',
+    alt: 'fractal',
+    comp: algoComponents.Fractal,
+  },
 }
 
 export const getAlgoLink = (slug: string) => {

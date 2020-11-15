@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import useAnimate from './animate'
-import { contentWidth, color, delay } from './helper'
+import { contentWidth, color } from './helper'
 
 interface Node {
   s: string // symbol
@@ -97,10 +97,12 @@ const Maze = () => {
   const [findType, setFindType] = useState('')
 
   const generateMaze = async gt => {
+    setFindType(null)
     setGenerateType(gt)
   }
 
   const findPath = ft => {
+    setGenerateType(null)
     setFindType(ft)
   }
 

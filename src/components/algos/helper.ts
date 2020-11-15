@@ -27,8 +27,10 @@ export const color = {
   white: '#FFFFFF',
 }
 
-export const delay = (ms: number) => {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms)
-  })
+export const d2a = deg => {
+  return (deg / 180) * Math.PI
+}
+
+export const a2d = angle => {
+  return (angle / Math.PI) * 180
 }
