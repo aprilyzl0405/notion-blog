@@ -200,6 +200,14 @@
   line-height: 1.7;
 }
 
+.post ol li {
+  list-style-type: decimal;
+}
+
+.post ul li {
+  list-style-type: initial;
+}
+
 .post a + p {
   margin-top: 0;
 }

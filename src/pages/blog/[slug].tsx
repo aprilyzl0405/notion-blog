@@ -167,6 +167,7 @@ const RenderPost = ({ post, redirect, preview }) => {
         {(post.content || []).map((block, blockIdx) => {
           const { value } = block
           const { type, properties, id, parent_id } = value
+          console.log(type, properties, id, parent_id)
           const isLast = blockIdx === post.content.length - 1
           const isList = listTypes.has(type)
           let toRender = []

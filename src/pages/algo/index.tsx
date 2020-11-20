@@ -17,7 +17,7 @@ const Algo = () => {
                   src={
                     process.env.NODE_ENV === 'production'
                       ? algos[slug]['img']
-                      : '/minesweeper.jpg'
+                      : '/skyandroad.jpg'
                   }
                   alt={algos[slug]['alt']}
                 />

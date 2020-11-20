@@ -124,8 +124,6 @@ const Trie = () => {
         ? node.x - (node.width - (itemWidth || itemWidth)) / 2
         : node.x
 
-      console.log(node.c, node.x, node.y)
-
       ctx.save()
       ctx.globalAlpha = 0.8
       ctx.beginPath()
@@ -138,21 +136,6 @@ const Trie = () => {
       ctx.textBaseline = 'middle'
       ctx.fillStyle = color.white
       ctx.fillText(node.c, x + itemWidth / 2, node.y + itemHeight / 2)
-
-      if ('balanceFactor' in node) {
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'bottom'
-        ctx.fillStyle = color.black
-        ;['高度:' + node.h, '平衡:' + node.balanceFactor].forEach(
-          (str, idx) => {
-            ctx.fillText(
-              str,
-              node.x + itemWidth / 2,
-              (idx - 1) * 18 + node.y - 4
-            )
-          }
-        )
-      }
     }
 
     renderItemNode(node)
