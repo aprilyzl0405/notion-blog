@@ -92,7 +92,7 @@ const Maze = () => {
 
   const [isRenderVisited, setIsRenderVisited] = useState(false)
   const [mazeData, setMazeData] = useState<MazeData>([])
-  const [{ animate, restart }] = useAnimate()
+  const [restart, animate] = useAnimate(null, null, 1)
   const [generateType, setGenerateType] = useState('')
   const [findType, setFindType] = useState('')
 

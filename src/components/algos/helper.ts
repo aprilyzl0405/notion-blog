@@ -1,10 +1,17 @@
+import { resolve } from 'path'
+
+export const dpr = 2
 export const contentWidth = 512
 export const contentHeight = 512
-export const levelHeight = 36
+export const levelHeight = 50
 export const paddingH = 15
 export const paddingV = 15
-export const paddingTop = 0
+export const paddingTop = 70
+export const duration = 500
 
+export const font = '14px Arial'
+export const fontSm = '12px Arial'
+export const fontLg = '16px Arial'
 export const color = {
   red: '#F44336',
   pink: '#E91E63',
@@ -27,6 +34,16 @@ export const color = {
   grey: '#9E9E9E',
   black: '#000000',
   white: '#FFFFFF',
+}
+
+export const delay = ms => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(0), ms)
+  })
+}
+
+export const clone = o => {
+  return JSON.parse(JSON.stringify(o))
 }
 
 export const rand = (min, max) =>
