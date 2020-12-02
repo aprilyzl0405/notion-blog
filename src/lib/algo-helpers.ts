@@ -68,7 +68,7 @@ export const algos = {
   Heap: {
     name: '二叉堆',
     desc: `二叉堆分为最大堆和最小堆。最大堆：父结点的键值总是大于或等于任何一个子节点的键值；最小堆：父结点的键值总是小于或等于任何一个子节点的键值。`,
-    img: 'https://static.april-zhh.cn/algo/trie.png',
+    img: 'https://static.april-zhh.cn/algo/heap.png',
     alt: 'heap',
     comp: algoComponents.Heap,
   },
