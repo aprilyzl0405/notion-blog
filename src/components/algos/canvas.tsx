@@ -9,14 +9,20 @@ const Canvas = ({ height, width, dpr, isAnimating, children }) => {
   const actualHeight = height * dpr
 
   // the canvas' context is stored once it's created
-  const [context, setContext] = useState(null)
+  const [context, setContext] = useState({
+    canvas: null,
+    ctx: null,
+  })
 
   useEffect(() => {
     if (canvasRef.current !== null) {
       const canvasContext = canvasRef.current.getContext('2d')
       if (canvasContext !== null) {
         canvasContext.scale(dpr, dpr)
-        setContext(canvasContext)
+        setContext({
+          canvas: canvasRef.current,
+          ctx: canvasContext,
+        })
       }
     }
   }, [dpr])
@@ -35,9 +41,12 @@ const Canvas = ({ height, width, dpr, isAnimating, children }) => {
   )
 }
 
-export const useCanvas = () => {
-  const renderingContext = useContext(CanvasContext)
-  return renderingContext
+export const useCanvas: () => [
+  HTMLCanvasElement,
+  CanvasRenderingContext2D
+] = () => {
+  const context = useContext(CanvasContext)
+  return [context.canvas, context.ctx]
 }
 
 export default Canvas

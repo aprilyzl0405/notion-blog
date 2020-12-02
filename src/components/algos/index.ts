@@ -8,6 +8,7 @@ import RBTree from './rb-tree'
 import Tree23 from './tree-23'
 import SegmentTree from './segment-tree'
 import Heap from './heap'
+import Sort from './sort'
 
 export {
   MineSweeper,
@@ -20,4 +21,5 @@ export {
   Tree23,
   SegmentTree,
   Heap,
+  Sort,
 }

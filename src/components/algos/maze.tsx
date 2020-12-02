@@ -92,7 +92,7 @@ const Maze = () => {
 
   const [isRenderVisited, setIsRenderVisited] = useState(false)
   const [mazeData, setMazeData] = useState<MazeData>([])
-  const [restart, animate] = useAnimate(null, null, 1)
+  const [restart, animate] = useAnimate(null, null, { duration: 1 })
   const [generateType, setGenerateType] = useState('')
   const [findType, setFindType] = useState('')
 
@@ -117,13 +117,13 @@ const Maze = () => {
 
       setIsRenderVisited(false)
 
-      const magic = restart()
+      restart()
 
       if (generateType === 'dfs') {
         const dfsRecursive = async (x: number, y: number) => {
           mazeData[y][x].visited = true
 
-          await animate(magic)
+          await animate()
 
           for (let i = 0; i < 4; i++) {
             const newX = x + dir[i][1] * 2
@@ -148,7 +148,7 @@ const Maze = () => {
           while (queue.length) {
             const [x, y] = queue.shift()
 
-            await animate(magic)
+            await animate()
 
             for (let i = 0; i < 4; i++) {
               const newX = x + dir[i][1] * 2
@@ -188,7 +188,7 @@ const Maze = () => {
               }
             }
 
-            await animate(magic)
+            await animate()
 
             for (let i = 0; i < 4; i++) {
               const newX = x + dir[i][1] * 2
@@ -225,14 +225,14 @@ const Maze = () => {
 
       setIsRenderVisited(true)
 
-      const magic = restart()
+      restart()
 
       if (findType === 'dfsRec') {
         const dfsRecursive = async (x: number, y: number) => {
           mazeData[y][x].isPath = true
           mazeData[y][x].visited = true
 
-          await animate(magic)
+          await animate()
 
           if (x === exit.x && y === exit.y) {
             setMazeData(mazeData)
@@ -290,7 +290,7 @@ const Maze = () => {
 
             findPath(p)
 
-            await animate(magic)
+            await animate()
 
             if (p.y === exit.y && p.x === exit.x) break
 
@@ -331,7 +331,7 @@ const Maze = () => {
 
             findPath(p)
 
-            await animate(magic)
+            await animate()
 
             if (p.y === exit.y && p.x === exit.x) break
 

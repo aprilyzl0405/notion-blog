@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import useAnimate from './animate'
 import Canvas, { useCanvas } from './canvas'
+import { Node } from './type'
 import {
   color,
   dpr,
@@ -12,38 +13,18 @@ import {
   font,
   paddingV,
   clone,
-  Tween,
-  delay,
+  len,
+  nodeItemHeight as itemHeight,
+  nodeItemWidth as itemWidth,
+  max,
+  min,
 } from './helper'
 
-interface Node {
-  n: number
-
-  to?: {
-    x: number
-    y: number
-  }
-
-  x?: number
-  y?: number
-
-  width: number
-  height: number
-  fillStyle?: string
-  strokeStyle?: string
-}
-
-const len = 20
-const itemWidth = contentWidth / len
-const itemHeight = 18
-const min = 1
-const max = len
 const branchIndex = Math.floor((len - 1 - 1) / 2)
 // Heap tree height
 const level = Math.ceil(Math.log(len + 1) / Math.log(2))
 const _contentWidth = Math.pow(2, level - 1) * itemWidth
 const translateX = (contentWidth - _contentWidth) / 2
-const _duration = 500
 
 const initArr = Array(len)
   .fill(0)
@@ -67,8 +48,7 @@ const initArr = Array(len)
   )
 
 const HeapData = ({ type = 'shiftUp' }) => {
-  const ctx = useCanvas()
-  const magic = useRef(0)
+  const [, ctx] = useCanvas()
 
   let [arr, _arr, _arr_] = [
     [...clone(initArr)],
@@ -170,25 +150,25 @@ const HeapData = ({ type = 'shiftUp' }) => {
 
       arr[k].fillStyle = color.green
       _arr_[k].fillStyle = color.green
-      await animate(magic.current)
+      await animate()
 
       arr[j].fillStyle = color.orange
       _arr_[j].fillStyle = color.orange
-      await animate(magic.current)
+      await animate()
 
       if (arr[j].n > arr[k].n) {
         arr[k].fillStyle = color.blue
         _arr_[k].fillStyle = color.blue
         arr[j].fillStyle = color.blue
         _arr_[j].fillStyle = color.blue
-        await animate(magic.current)
+        await animate()
         break
       }
 
       swap(j, k, arr)
       swap(j, k, _arr_)
 
-      await animate(magic.current)
+      await animate()
 
       arr[k].fillStyle = color.blue
       _arr_[k].fillStyle = color.blue
@@ -196,7 +176,7 @@ const HeapData = ({ type = 'shiftUp' }) => {
       if (Math.floor((k - 1) / 2) === 0) {
         arr[j].fillStyle = color.blue
         _arr_[j].fillStyle = color.blue
-        await animate(magic.current)
+        await animate()
       }
 
       k = j
@@ -209,11 +189,11 @@ const HeapData = ({ type = 'shiftUp' }) => {
 
       arr[k].fillStyle = color.green
       _arr_[k].fillStyle = arr[k].fillStyle
-      await animate(magic.current)
+      await animate()
 
       arr[j].fillStyle = color.orange
       _arr_[j].fillStyle = arr[j].fillStyle
-      await animate(magic.current)
+      await animate()
 
       if (j + 1 < arr.length && arr[j + 1].n > arr[j].n) {
         arr[j].fillStyle = color.blue
@@ -221,7 +201,7 @@ const HeapData = ({ type = 'shiftUp' }) => {
         arr[j + 1].fillStyle = color.orange
         _arr_[j + 1].fillStyle = arr[j + 1].fillStyle
         j++
-        await animate(magic.current)
+        await animate()
       }
 
       if (arr[k].n > arr[j].n) {
@@ -229,14 +209,14 @@ const HeapData = ({ type = 'shiftUp' }) => {
         _arr_[k].fillStyle = arr[k].fillStyle
         arr[j].fillStyle = color.blue
         _arr_[j].fillStyle = arr[j].fillStyle
-        await animate(magic.current)
+        await animate()
         break
       }
 
       swap(k, j, arr)
       swap(k, j, _arr_)
 
-      await animate(magic.current)
+      await animate()
 
       arr[k].fillStyle = color.blue
       _arr_[k].fillStyle = arr[k].fillStyle
@@ -244,7 +224,7 @@ const HeapData = ({ type = 'shiftUp' }) => {
       if (!(j * 2 + 1 < arr.length)) {
         arr[j].fillStyle = color.blue
         _arr_[j].fillStyle = arr[j].fillStyle
-        await animate(magic.current)
+        await animate()
       }
 
       k = j
@@ -253,11 +233,11 @@ const HeapData = ({ type = 'shiftUp' }) => {
 
   useEffect(() => {
     ;(async () => {
-      magic.current = restart()
+      restart()
       arr = [...clone(initArr)]
       _arr = [...clone(initArr)]
       _arr_ = [...clone(initArr)]
-      await animate(magic.current)
+      await animate()
 
       if (type === 'shiftUp') {
         for (let i = 1; i < arr.length; i++) {
@@ -300,11 +280,10 @@ const Heap = () => {
       </div>
       <Canvas
         width={contentWidth}
-        height={contentWidth}
+        height={(contentWidth / 4) * 3}
         dpr={dpr}
         isAnimating={true}
       >
-        {/* <InNode duration={duration} arr={arr} _arr={_arr} _arr_={_arr_} /> */}
         <HeapData type={type} />
       </Canvas>
     </>

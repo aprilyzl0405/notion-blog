@@ -1,6 +1,3 @@
-import { resolve } from 'path'
-
-export const dpr = 2
 export const contentWidth = 512
 export const contentHeight = 512
 export const levelHeight = 50
@@ -8,6 +5,14 @@ export const paddingH = 15
 export const paddingV = 15
 export const paddingTop = 70
 export const duration = 500
+export const dpr = 2
+
+// Node's Array
+export const len = 20
+export const nodeItemWidth = contentWidth / len
+export const nodeItemHeight = 18
+export const min = 1
+export const max = len
 
 export const font = '14px Arial'
 export const fontSm = '12px Arial'
@@ -43,6 +48,8 @@ export const delay = ms => {
 }
 
 export const clone = o => {
+  if (!o) return o
+
   return JSON.parse(JSON.stringify(o))
 }
 

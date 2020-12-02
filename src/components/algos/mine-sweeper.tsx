@@ -244,7 +244,7 @@ const MineSweeper = () => {
         const _scale = (canvas.offsetWidth / canvas.width) * scale
         const x = Math.floor(e.offsetX / _scale / side)
         const y = Math.floor(e.offsetY / _scale / side)
-        console.log(x, y)
+        // console.log(x, y)
 
         const node = arr[y][x]
 
@@ -308,7 +308,7 @@ const MineSweeper = () => {
 
       ctx.scale(scale, scale)
 
-      console.log(arr)
+      // console.log(arr)
       arr.forEach((row, idxRow) => {
         row.forEach((node, idxCol) => {
           const x = side * idxCol
