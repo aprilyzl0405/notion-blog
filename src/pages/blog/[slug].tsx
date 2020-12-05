@@ -395,6 +395,10 @@ const RenderPost = ({ post, redirect, preview }) => {
               }
               break
             }
+            case 'toggle': {
+              toRender.push(<p>{textBlock(properties.title, true, id)}</p>)
+              break
+            }
             default:
               if (
                 process.env.NODE_ENV !== 'production' &&

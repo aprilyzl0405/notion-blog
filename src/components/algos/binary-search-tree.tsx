@@ -54,8 +54,6 @@ const BinarySearchTreeData = ({ type = 'random' }) => {
   const [restart, _animate] = useAnimate(setPos, nextFrame)
 
   const getPayload = () => {
-    // const levelHeight = (contentHeight - paddingTop) / getHeight(root)
-
     return {
       canvas,
       ctx,
